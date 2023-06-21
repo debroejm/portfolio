@@ -1,0 +1,135 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    color: white;
+    background-color: #191e21;
+    min-height: 100%;
+    font-family: "Verdana", "sans-serif";
+}
+
+.page-width {
+    max-width: 1200px;
+}
+
+.header-bar {
+    background-color: #1f2c3a;
+    margin: 0 auto;
+}
+.header-bar-sticky {
+    top: 0;
+    z-index: 1000;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    box-shadow: 0 5px 4px 1px #111;
+}
+
+#title-bar {
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    position: relative;
+}
+
+#header-name {
+    font-family: "Arial Black", "sans-serif";
+    padding: 0 0 0 12px;
+    margin: 0;
+}
+
+#header-role {
+    font-family: "Trebuchet MS", "sans-serif";
+    color: lightgray;
+    padding: 0 0 12px 20px;
+    margin: 0;
+}
+
+#navbar {
+    display: grid;
+    margin: 0 auto;
+    padding: 0;
+    font-family: "Verdana", "sans-serif";
+    font-size: 20px;
+}
+
+#navbar-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#navbar li {
+    position: relative;
+    display: inline;
+    margin: 0 8px;
+}
+
+.navbar-left {
+    display: block;
+    float: left;
+}
+
+.navbar-right {
+    display: block;
+    float: right;
+}
+
+.navbar-item {
+    color: white;
+    padding: 8px 18px;
+    text-decoration: none;
+}
+
+.navbar-icon-img {
+    width: auto;
+    height: 28px;
+    margin-top: 8px;
+}
+
+#navbar li:not(.navbar-icon) a:hover {
+    background-color: #12191f;
+}
+
+#navbar li:not(.navbar-icon) a:hover:not(.active) {
+    border-bottom-color: #12191f;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+}
+
+#navbar .active {
+    color: #00e1e5;
+    border-bottom-color: #00e1e5;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+}
+
+#content {
+    display: grid;
+    padding: 0;
+    margin: 0 auto;
+    position: relative;
+
+    /* Stretch through the bottom as needed */
+    padding-bottom: 9999px;
+    margin-bottom: -9999px;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    margin: auto;
+    padding: 6px;
+    font-size: small;
+}
+
+#footer a {
+    text-decoration: none;
+    color: #00b3b6;
+}

@@ -1,0 +1,51 @@
+from typing import NamedTuple
+
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+PAGES = {
+    'About': ('about', {}),
+    'Projects': ('projects', {
+        'SwarmEngine': 'swarm',
+        'DOOM: Capture Points System': 'cps',
+    })
+}
+
+
+class PortfolioInfo(NamedTuple):
+    name: str
+    role: str
+
+
+portfolio_info = PortfolioInfo(
+    name="James De Broeck",
+    role="Software Development Engineer",
+)
+
+
+class NavbarSocial(NamedTuple):
+    icon: str
+    alt: str
+    link: str
+
+
+SOCIALS = [
+    NavbarSocial('email.png', 'email', 'mailto:debroejm@gmail.com'),
+    NavbarSocial('linkedin.png', 'linkedin', 'https://www.linkedin.com/in/jamesmdebroeck/'),
+]
+
+
+@app.route('/')
+def index():
+    return render_template(
+        'index.html',
+        portfolio_info=portfolio_info,
+        nav_pages=PAGES,
+        nav_socials=SOCIALS,
+        active_page='About',
+    )
+
+
+if __name__ == '__main__':
+    app.run()

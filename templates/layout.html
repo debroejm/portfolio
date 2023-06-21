@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        {% block head %}
+            <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+            <title>{{ portfolio_info.name }}</title>
+            <div class="header-bar"><div id="title-bar" class="page-width">
+                <h1 id="header-name" >{{ portfolio_info.name }}</h1>
+                <h4 id="header-role">{{ portfolio_info.role }}</h4>
+            </div></div>
+            <div class="header-bar header-bar-sticky"><div id="navbar" class="page-width"><ul id="navbar-list">
+                <li class="navbar-icon navbar-left">
+                    <a href="#"><img src="{{ url_for('static', filename='home.png') }}" alt="top" class="navbar-icon-img"></a>
+                </li>
+                {% for page_name, (page_link, subpages) in nav_pages.items() %}
+                <li>
+                    <a class="navbar-item navbar-left {% if active_page == page_name %} active{% endif %}" href="#{{ page_link }}">{{ page_name }}</a>
+                </li>
+                {% endfor %}
+                {% for social in nav_socials %}
+                <li class="navbar-icon navbar-right">
+                    <a href="{{ social.link }}"><img src="{{ url_for('static', filename=social.icon) }}" alt="{{ social.alt }}" class="navbar-icon-img"></a>
+                </li>
+                {% endfor %}
+            </ul></div></div>
+        {% endblock %}
+    </head>
+    <body>
+        <div id="content" class="page-width">{% block content %}{% endblock %}</div>
+        <div id="footer" class="page-width">
+            {% block footer %}
+            &copy; Copyright 2023 by <a href="{{ url_for('index') }}">{{ portfolio_info.name }}</a>.
+            {% endblock %}
+        </div>
+    </body>
+</html>
