@@ -1,4 +1,4 @@
-from typing import NamedTuple
+from typing import Collection, NamedTuple
 
 from flask import Flask, render_template
 
@@ -30,10 +30,11 @@ class NavbarSocial(NamedTuple):
     link: str
 
 
-SOCIALS = [
-    NavbarSocial('email.png', 'email', 'mailto:debroejm@gmail.com'),
-    NavbarSocial('linkedin.png', 'linkedin', 'https://www.linkedin.com/in/jamesmdebroeck/'),
-]
+def generate_socials() -> Collection[NavbarSocial]:
+    return [
+        NavbarSocial('email.png', 'Email', 'mailto:debroejm@gmail.com'),
+        NavbarSocial('linkedin.png', 'LinkedIn', 'https://www.linkedin.com/in/jamesmdebroeck/'),
+    ]
 
 
 @app.route('/')
@@ -42,7 +43,7 @@ def index():
         'index.html',
         portfolio_info=portfolio_info,
         nav_pages=PAGES,
-        nav_socials=SOCIALS,
+        nav_socials=generate_socials(),
         active_page='About',
     )
 
