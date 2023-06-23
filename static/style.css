@@ -93,6 +93,10 @@ body {
     margin-top: 8px;
 }
 
+.navbar-icon-img:hover {
+    filter: opacity(50%);
+}
+
 #navbar li:not(.navbar-icon) a:hover {
     background-color: #12191f;
 }
