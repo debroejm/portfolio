@@ -125,6 +125,38 @@ body {
     border-bottom-width: 3px;
 }
 
+h2 {
+    color: lightgray;
+}
+
+.section-title-left {
+    text-align: left;
+}
+
+.section-title-right {
+    text-align: right;
+}
+
+.section-title-left:after {
+    content: "";
+    border: 1px solid #00e1e5;
+    margin-top: 5px;
+    margin-bottom: 7px;
+    display: grid;
+    max-width: 6em;
+}
+
+.section-title-right:after {
+    content: "";
+    border: 1px solid #00e1e5;
+    margin-top: 5px;
+    margin-bottom: 7px;
+    display: block;
+    float: right;
+    clear: right;
+    max-width: 6em;
+}
+
 #content {
     display: grid;
     padding: 0;
@@ -134,6 +166,13 @@ body {
     /* Stretch through the bottom as needed */
     padding-bottom: 9999px;
     margin-bottom: -9999px;
+}
+
+.content-section {
+    background-color: #2f3b4b;
+    margin: 3em 0 0;
+    padding: 0 1em;
+    box-shadow: 2px 5px 4px 1px #111;
 }
 
 #footer {

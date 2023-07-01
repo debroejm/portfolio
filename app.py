@@ -1,5 +1,6 @@
+from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Collection, NamedTuple
+from typing import Collection, List, NamedTuple, Optional
 
 from flask import Flask, render_template, send_file, url_for
 
@@ -25,7 +26,8 @@ portfolio_info = PortfolioInfo(
 )
 
 
-class NavbarSocial(NamedTuple):
+@dataclass(frozen=True)
+class NavbarSocial(object):
     icon: str
     alt: str
     link: str
@@ -39,6 +41,63 @@ def generate_socials() -> Collection[NavbarSocial]:
     ]
 
 
+class TextBlocks(list, List[str]):
+    def __init__(self, *_txt_blocks: str):
+        super().__init__([txt.replace('\n', '') for txt in _txt_blocks])
+
+
+@dataclass(frozen=True)
+class PageSection(object):
+    title: str
+    id: str
+    body: TextBlocks
+
+
+INTRO = TextBlocks(
+"""
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet consequat nisl. Donec fermentum orci ex,
+ non lacinia purus vestibulum sit amet. Nunc scelerisque diam eget felis aliquet euismod. Nunc justo lacus, mollis
+ et ante non, molestie vehicula eros. Aliquam et nulla odio. Morbi elementum varius ex. Donec egestas, urna a
+ malesuada placerat, elit diam vulputate odio, sit amet placerat risus lacus id urna. Phasellus placerat dolor
+ pellentesque turpis laoreet maximus. Integer porttitor dui at elit placerat ornare. Quisque vestibulum libero odio,
+ quis porttitor ante ullamcorper sed. Nam sollicitudin leo quis nibh dapibus, vitae posuere massa placerat. Donec rutrum
+ ante vel neque suscipit, sit amet suscipit lorem pulvinar. Morbi consectetur arcu non mauris venenatis, quis malesuada
+ quam rutrum.
+"""
+)
+
+SECTIONS = [
+    PageSection(
+        title="Project A",
+        id="project-a",
+        body=TextBlocks("""
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet consequat nisl. Donec fermentum orci ex,
+ non lacinia purus vestibulum sit amet. Nunc scelerisque diam eget felis aliquet euismod. Nunc justo lacus, mollis
+ et ante non, molestie vehicula eros. Aliquam et nulla odio. Morbi elementum varius ex. Donec egestas, urna a
+ malesuada placerat, elit diam vulputate odio, sit amet placerat risus lacus id urna. Phasellus placerat dolor
+ pellentesque turpis laoreet maximus. Integer porttitor dui at elit placerat ornare. Quisque vestibulum libero odio,
+ quis porttitor ante ullamcorper sed. Nam sollicitudin leo quis nibh dapibus, vitae posuere massa placerat. Donec rutrum
+ ante vel neque suscipit, sit amet suscipit lorem pulvinar. Morbi consectetur arcu non mauris venenatis, quis malesuada
+ quam rutrum.
+""")
+    ),
+    PageSection(
+        title="Project B",
+        id="project-b",
+        body=TextBlocks("""
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet consequat nisl. Donec fermentum orci ex,
+     non lacinia purus vestibulum sit amet. Nunc scelerisque diam eget felis aliquet euismod. Nunc justo lacus, mollis
+     et ante non, molestie vehicula eros. Aliquam et nulla odio. Morbi elementum varius ex. Donec egestas, urna a
+     malesuada placerat, elit diam vulputate odio, sit amet placerat risus lacus id urna. Phasellus placerat dolor
+     pellentesque turpis laoreet maximus. Integer porttitor dui at elit placerat ornare. Quisque vestibulum libero odio,
+     quis porttitor ante ullamcorper sed. Nam sollicitudin leo quis nibh dapibus, vitae posuere massa placerat. Donec rutrum
+     ante vel neque suscipit, sit amet suscipit lorem pulvinar. Morbi consectetur arcu non mauris venenatis, quis malesuada
+     quam rutrum.
+    """)
+    ),
+]
+
+
 @app.route('/')
 def index():
     return render_template(
@@ -47,6 +106,8 @@ def index():
         nav_pages=PAGES,
         nav_socials=generate_socials(),
         active_page='About',
+        intro=INTRO,
+        sections=SECTIONS,
     )
 
 

@@ -12,10 +12,12 @@
                 <li class="navbar-icon navbar-left">
                     <a href="#"><img src="{{ url_for('static', filename='home.png') }}" alt="top" class="navbar-icon-img"></a>
                 </li>
-                {% for page_name, (page_link, subpages) in nav_pages.items() %}
-                <li>
-                    <a class="navbar-item navbar-left {% if active_page == page_name %} active{% endif %}" href="#{{ page_link }}">{{ page_name }}</a>
-                </li>
+                {% for section in sections %}
+                    {% if section.title != None and section.id != None %}
+                        <li>
+                            <a class="navbar-item navbar-left" href="#{{ section.id }}">{{ section.title }}</a>
+                        </li>
+                    {% endif %}
                 {% endfor %}
                 {% for social in nav_socials %}
                 <li class="navbar-icon navbar-right">
@@ -26,7 +28,18 @@
         {% endblock %}
     </head>
     <body>
-        <div id="content" class="page-width">{% block content %}{% endblock %}</div>
+        <div id="content" class="page-width">{% block content %}
+            <div class="content-section">
+                {% for blob in intro %}<p>{{ blob }}</p>{% endfor %}
+            </div>
+            {% for section in sections %}
+                <a id="{{ section.id }}"></a>
+                <div class="content-section">
+                    <h2 class="section-title-left">{{ section.title }}</h2>
+                    {% for blob in section.body %}<p>{{ blob }}</p>{% endfor %}
+                </div>
+            {% endfor %}
+        {% endblock %}</div>
         <div id="footer" class="page-width">
             {% block footer %}
             &copy; Copyright 2023 by <a href="{{ url_for('index') }}">{{ portfolio_info.name }}</a>.
