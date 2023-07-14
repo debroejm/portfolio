@@ -55,15 +55,13 @@ class PageSection(object):
 
 INTRO = TextBlocks(
 """
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet consequat nisl. Donec fermentum orci ex,
- non lacinia purus vestibulum sit amet. Nunc scelerisque diam eget felis aliquet euismod. Nunc justo lacus, mollis
- et ante non, molestie vehicula eros. Aliquam et nulla odio. Morbi elementum varius ex. Donec egestas, urna a
- malesuada placerat, elit diam vulputate odio, sit amet placerat risus lacus id urna. Phasellus placerat dolor
- pellentesque turpis laoreet maximus. Integer porttitor dui at elit placerat ornare. Quisque vestibulum libero odio,
- quis porttitor ante ullamcorper sed. Nam sollicitudin leo quis nibh dapibus, vitae posuere massa placerat. Donec rutrum
- ante vel neque suscipit, sit amet suscipit lorem pulvinar. Morbi consectetur arcu non mauris venenatis, quis malesuada
- quam rutrum.
+I'm a software engineer with a passion for games. I have experience in cloud computing at AWS, and a specific interest
+ in highly-parallelized processing; especially how it can be applied to game systems. I also dabble in rendering here
+ and there.
+""",
 """
+Welcome to my repository of projects.
+""",
 )
 
 SECTIONS = [
