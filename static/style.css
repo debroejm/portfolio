@@ -172,6 +172,16 @@ h2 {
     margin-bottom: -9999px;
 }
 
+#content a {
+    text-decoration: none;
+    color: #00e1e5;
+}
+
+#content a:hover {
+    text-decoration: underline;
+    color: #8150f3;
+}
+
 .content-section {
     background-color: #2f3b4b;
     margin: 3em 0 0;

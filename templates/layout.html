@@ -36,7 +36,7 @@
                 <a id="{{ section.id }}"></a>
                 <div class="content-section">
                     <h2 class="section-title-left">{{ section.title }}</h2>
-                    {% for blob in section.body %}<p>{{ blob }}</p>{% endfor %}
+                    {% for blob in section.body %}<p>{{ blob|safe }}</p>{% endfor %}
                 </div>
             {% endfor %}
         {% endblock %}</div>

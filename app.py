@@ -66,33 +66,31 @@ Welcome to my repository of projects.
 
 SECTIONS = [
     PageSection(
-        title="Project A",
-        id="project-a",
-        body=TextBlocks("""
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet consequat nisl. Donec fermentum orci ex,
- non lacinia purus vestibulum sit amet. Nunc scelerisque diam eget felis aliquet euismod. Nunc justo lacus, mollis
- et ante non, molestie vehicula eros. Aliquam et nulla odio. Morbi elementum varius ex. Donec egestas, urna a
- malesuada placerat, elit diam vulputate odio, sit amet placerat risus lacus id urna. Phasellus placerat dolor
- pellentesque turpis laoreet maximus. Integer porttitor dui at elit placerat ornare. Quisque vestibulum libero odio,
- quis porttitor ante ullamcorper sed. Nam sollicitudin leo quis nibh dapibus, vitae posuere massa placerat. Donec rutrum
- ante vel neque suscipit, sit amet suscipit lorem pulvinar. Morbi consectetur arcu non mauris venenatis, quis malesuada
- quam rutrum.
-""")
-    ),
+        title="DOOM: Capture Point Systems",
+        id="doom-cps",
+        body=TextBlocks(
+            "Capture Point Systems is a mod for modern DOOM multiplayer source ports, such as"
+            " <a href=\"https://zandronum.com/\">Zandronum</a>. This mod adds a framework for creating \"King of the"
+            " Hill\" style capture points. There are a couple gamemodes, most of which use two teams (red vs blue)."
+            " Teams either win by capturing all of the points, or by holding a majority of points for the longest time.",
+            "<a href=\"https://github.com/MajorSlime/CapturePointSystems\">Core Framework</a>",
+            "<a href=\"https://github.com/MajorSlime/CapturePointSystemsMapPackDoom\">DOOM Map Pack</a>",
+        )),
     PageSection(
-        title="Project B",
-        id="project-b",
+        title="SwarmEngine",
+        id="swarm-engine",
         body=TextBlocks("""
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet consequat nisl. Donec fermentum orci ex,
-     non lacinia purus vestibulum sit amet. Nunc scelerisque diam eget felis aliquet euismod. Nunc justo lacus, mollis
-     et ante non, molestie vehicula eros. Aliquam et nulla odio. Morbi elementum varius ex. Donec egestas, urna a
-     malesuada placerat, elit diam vulputate odio, sit amet placerat risus lacus id urna. Phasellus placerat dolor
-     pellentesque turpis laoreet maximus. Integer porttitor dui at elit placerat ornare. Quisque vestibulum libero odio,
-     quis porttitor ante ullamcorper sed. Nam sollicitudin leo quis nibh dapibus, vitae posuere massa placerat. Donec rutrum
-     ante vel neque suscipit, sit amet suscipit lorem pulvinar. Morbi consectetur arcu non mauris venenatis, quis malesuada
-     quam rutrum.
-    """)
-    ),
+""")),
+    PageSection(
+        title="SimpleBlend",
+        id="simple-blend",
+        body=TextBlocks("""
+""")),
+    PageSection(
+        title="Reversi",
+        id="reversi",
+        body=TextBlocks("""
+""")),
 ]
 
 
