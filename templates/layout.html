@@ -3,6 +3,21 @@
     <head>
         {% block head %}
             <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+            <script>
+                $(function() {
+                    const imgs = document.querySelectorAll('.content-gallery img');
+                    const fullPage = document.querySelector('#fullpage');
+                    const fullPageImg = document.querySelector('#fullpage-img');
+
+                    imgs.forEach(img => {
+                        img.addEventListener('click', function() {
+                            fullPageImg.src = img.getAttribute('data-full-src');
+                            fullPage.style.display = 'block';
+                        });
+                    });
+                });
+            </script>
             <title>{{ portfolio_info.name }}</title>
             <div class="header-bar"><div id="title-bar" class="page-width">
                 <h1 id="header-name" >{{ portfolio_info.name }}</h1>
@@ -29,14 +44,19 @@
     </head>
     <body>
         <div id="content" class="page-width">{% block content %}
-            <div class="content-section">
+            <div class="content-section"><div class="content-text">
                 {% for blob in intro %}<p>{{ blob }}</p>{% endfor %}
-            </div>
+            </div></div>
             {% for section in sections %}
                 <a id="{{ section.id }}"></a>
                 <div class="content-section">
-                    <h2 class="section-title-left">{{ section.title }}</h2>
-                    {% for blob in section.body %}<p>{{ blob|safe }}</p>{% endfor %}
+                    <div class="content-text">
+                        <h2 class="section-title-left">{{ section.title }}</h2>
+                        {% for blob in section.body %}<p>{{ blob|safe }}</p>{% endfor %}
+                    </div>
+                    <div class="content-gallery">
+                        {% for img_name in section.gallery %}<img src="{{ url_for('static', filename='images/thumbs/' + img_name) }}" data-full-src="{{ url_for('static', filename='images/' + img_name) }}" alt="{{ img_name }}" />{% endfor %}
+                    </div>
                 </div>
             {% endfor %}
         {% endblock %}</div>
@@ -44,6 +64,9 @@
             {% block footer %}
             &copy; Copyright 2023 by <a href="{{ url_for('index') }}">{{ portfolio_info.name }}</a>.
             {% endblock %}
+        </div>
+        <div id="fullpage" onclick="this.style.display='none';">
+            <img id="fullpage-img" src="" alt="Full Image" />
         </div>
     </body>
 </html>

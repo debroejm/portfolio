@@ -181,8 +181,11 @@ h2 {
 .content-section {
     background-color: #2f3b4b;
     margin: 3em 0 0;
-    padding: 0 1em;
     box-shadow: 2px 5px 4px 1px #111;
+}
+
+.content-text {
+    padding: 0 1em;
 }
 
 #footer {
@@ -196,4 +199,47 @@ h2 {
 #footer a {
     text-decoration: none;
     color: #00b3b6;
+}
+
+.content-gallery {
+    background-color: #242d3a;
+    margin: 0;
+    text-align: center;
+}
+
+.content-gallery img {
+    display: inline-block;
+    cursor: pointer;
+    margin: 1em 0.5em 0.5em;
+    width: 18%;
+    border: solid 3px #242d3a;
+}
+
+.content-gallery img:hover {
+    border: solid 3px #00e1e5;
+}
+
+#fullpage {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 99vw;
+    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat no-repeat;
+    background-position: center center;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#fullpage-img {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 90vh;
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }

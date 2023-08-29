@@ -51,6 +51,7 @@ class PageSection(object):
     title: str
     id: str
     body: TextBlocks
+    gallery: Collection[str] = field(default_factory=list)
 
 
 INTRO = TextBlocks(
