@@ -72,11 +72,25 @@ SECTIONS = [
         body=TextBlocks(
             "Capture Point Systems is a mod for modern DOOM multiplayer source ports, such as"
             " <a href=\"https://zandronum.com/\">Zandronum</a>. This mod adds a framework for creating \"King of the"
-            " Hill\" style capture points. There are a couple gamemodes, most of which use two teams (red vs blue)."
-            " Teams either win by capturing all of the points, or by holding a majority of points for the longest time.",
-            "<a href=\"https://github.com/MajorSlime/CapturePointSystems\">Core Framework</a>",
-            "<a href=\"https://github.com/MajorSlime/CapturePointSystemsMapPackDoom\">DOOM Map Pack</a>",
-        )),
+            " Hill\" style capture points, in a style that closely resembles Team Fortress 2's Control Points. There"
+            " are a couple gamemodes, most of which use two teams (red vs blue). Teams either win by capturing all of"
+            " the points, or by holding a majority of points for the longest time.",
+            "The game mode is achieved by using Zandronum's base \"Team Game\" gamemode, which allows for scripting"
+            " custom rules to control points and win conditions. Scripts are written in"
+            " <a href=\"https://zdoom.org/wiki/ACS\">Action Code Script (ACS)</a>, which is Doom's own custom scripting"
+            " language.",
+            "The gamemode scripting is <a href=\"https://zdoom.org/wiki/IWAD\">IWAD</a> agnostic, meaning maps can be"
+            " made for Doom, Chex Quest, or any other game that runs using Zandronum or similar source-ports. A"
+            " first-party set of maps for both Chex Quest and Doom are provided.",
+            "<a href=\"https://github.com/MajorSlime/CapturePointSystems\">Core Framework</a>"
+            " • <a href=\"https://github.com/MajorSlime/CapturePointSystemsMapPackDoom\">DOOM Map Pack</a>",
+        ),
+        gallery=[
+            'CQ_CPS02.png',
+            'CQ_CPS03.png',
+            'CQ_CPS05.png',
+        ],
+    ),
     PageSection(
         title="SwarmEngine",
         id="swarm-engine",
