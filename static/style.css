@@ -9,7 +9,7 @@ html {
 }
 
 body {
-    color: white;
+    color: #eeeeee;
     background-color: #191e21;
     min-height: 100%;
     font-family: "Trebuchet MS", "sans-serif";
@@ -130,7 +130,7 @@ body {
 }
 
 h2 {
-    color: lightgray;
+    color: white;
 }
 
 .section-title-left {
@@ -166,10 +166,6 @@ h2 {
     padding: 0;
     margin: 0 auto;
     position: relative;
-
-    /* Stretch through the bottom as needed */
-    padding-bottom: 9999px;
-    margin-bottom: -9999px;
 }
 
 #content a {
