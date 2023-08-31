@@ -59,12 +59,15 @@
                     </div>
                 </div>
             {% endfor %}
-        {% endblock %}</div>
-        <div id="footer" class="page-width">
+            <div id="footer">
             {% block footer %}
-            &copy; Copyright 2023 by <a href="{{ url_for('index') }}">{{ portfolio_info.name }}</a>.
+                <p>
+                    <span class="left">&copy; Copyright 2023 by <a href="{{ url_for('index') }}">{{ portfolio_info.name }}</a>.</span>
+                    <span class="right"><a href="https://gitlab.noctisarma.net/broeckjb/portfolio">Source Code</a></span>
+                </p>
             {% endblock %}
-        </div>
+            </div>
+        {% endblock %}</div>
         <div id="fullpage" onclick="this.style.display='none';">
             <img id="fullpage-img" src="" alt="Full Image" />
         </div>

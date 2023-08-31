@@ -20,6 +20,14 @@ body {
     max-width: 1200px;
 }
 
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
 .header-bar {
     background-color: #1f2c3a;
     margin: 0 auto;
@@ -189,11 +197,9 @@ h2 {
 }
 
 #footer {
-    position: fixed;
-    bottom: 0;
-    margin: auto;
     padding: 6px;
     font-size: small;
+    text-align: left;
 }
 
 #footer a {
