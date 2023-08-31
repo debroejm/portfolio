@@ -82,8 +82,8 @@ SECTIONS = [
             "The game mode scripting is <a href=\"https://zdoom.org/wiki/IWAD\">IWAD</a> agnostic, meaning maps can be"
             " made for Doom, Chex Quest, or any other game that runs using Zandronum or similar source-ports. A"
             " first-party set of maps for both Chex Quest and Doom are provided.",
-            "<a href=\"https://github.com/MajorSlime/CapturePointSystems\">Core Framework</a>"
-            " • <a href=\"https://github.com/MajorSlime/CapturePointSystemsMapPackDoom\">DOOM Map Pack</a>",
+            "<span class=\"center\"><a href=\"https://github.com/MajorSlime/CapturePointSystems\">Core Framework</a>"
+            " • <a href=\"https://github.com/MajorSlime/CapturePointSystemsMapPackDoom\">DOOM Map Pack</a></span>",
         ),
         gallery=[
             'CQ_CPS02.png',
@@ -114,7 +114,7 @@ SECTIONS = [
             " to synchronizing.",
             "Currently, the project is in C++, but there is some interest in re-writing it in Rust as an effort to see"
             " how well Rust could be used for an engine like this, given Rust's inclination towards parallelism.",
-            "<a href=\"https://github.com/debroejm/SwarmEngine\">SwarmEngine</a>",
+            "<span class=\"center\"><a href=\"https://github.com/debroejm/SwarmEngine\">SwarmEngine</a></span>",
         )),
     PageSection(
         title="SimpleBlend",

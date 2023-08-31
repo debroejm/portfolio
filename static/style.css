@@ -28,6 +28,10 @@ body {
     float: right;
 }
 
+.center {
+    text-align: center;
+}
+
 .header-bar {
     background-color: #1f2c3a;
     margin: 0 auto;
@@ -141,32 +145,20 @@ h2 {
     color: white;
 }
 
-.section-title-left {
-    text-align: left;
+.section-title {
+    position: relative;
+    text-align: center;
 }
 
-.section-title-right {
-    text-align: right;
-}
-
-.section-title-left:after {
+.section-title:after {
+    position: absolute;
+    left: calc(50% - 3em);
     content: "";
     border: 1px solid #00e1e5;
     margin-top: 5px;
     margin-bottom: 7px;
     display: grid;
-    max-width: 6em;
-}
-
-.section-title-right:after {
-    content: "";
-    border: 1px solid #00e1e5;
-    margin-top: 5px;
-    margin-bottom: 7px;
-    display: block;
-    float: right;
-    clear: right;
-    max-width: 6em;
+    width: 6em;
 }
 
 #content {
