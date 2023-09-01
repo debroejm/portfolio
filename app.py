@@ -27,17 +27,21 @@ portfolio_info = PortfolioInfo(
 
 
 @dataclass(frozen=True)
-class NavbarSocial(object):
-    icon: str
+class Link(object):
     alt: str
     link: str
 
 
+@dataclass(frozen=True)
+class NavbarSocial(Link):
+    icon: str
+
+
 def generate_socials() -> Collection[NavbarSocial]:
     return [
-        NavbarSocial('email.png', 'Email', 'mailto:debroejm@gmail.com'),
-        NavbarSocial('resume.png', 'Resume', url_for('resume')),
-        NavbarSocial('linkedin.png', 'LinkedIn', 'https://www.linkedin.com/in/jamesmdebroeck/'),
+        NavbarSocial('Email', 'mailto:debroejm@gmail.com', icon='email.png'),
+        NavbarSocial('Resume', url_for('resume'), icon='resume.png'),
+        NavbarSocial('LinkedIn', 'https://www.linkedin.com/in/jamesmdebroeck/', icon='linkedin.png'),
     ]
 
 
@@ -46,12 +50,18 @@ class TextBlocks(list, List[str]):
         super().__init__([txt.replace('\n', '') for txt in _txt_blocks])
 
 
+class Links(list, List[Link]):
+    def render(self) -> str:
+        return ' • '.join(f"<a href=\"{l.link}\">{l.alt}</a>" for l in self)
+
+
 @dataclass(frozen=True)
 class PageSection(object):
     title: str
     id: str
     body: TextBlocks
     gallery: Collection[str] = field(default_factory=list)
+    links: Links = field(default_factory=Links)
 
 
 INTRO = TextBlocks(
@@ -88,14 +98,16 @@ SECTIONS = [
             "The game mode scripting is <a href=\"https://zdoom.org/wiki/IWAD\">IWAD</a> agnostic, meaning maps can be"
             " made for Doom, Chex Quest, or any other game that runs using Zandronum or similar source-ports. A"
             " first-party set of maps for both Chex Quest and Doom are provided.",
-            "<span class=\"center\"><a href=\"https://github.com/MajorSlime/CapturePointSystems\">Core Framework</a>"
-            " • <a href=\"https://github.com/MajorSlime/CapturePointSystemsMapPackDoom\">DOOM Map Pack</a></span>",
         ),
         gallery=[
             'CQ_CPS02.png',
             'CQ_CPS03.png',
             'CQ_CPS05.png',
         ],
+        links=Links([
+            Link("Core Framework", "https://github.com/MajorSlime/CapturePointSystems"),
+            Link("DOOM Map Pack", "https://github.com/MajorSlime/CapturePointSystemsMapPackDoom"),
+        ])
     ),
     PageSection(
         title="SwarmEngine",
@@ -120,18 +132,11 @@ SECTIONS = [
             " to synchronizing.",
             "Currently, the project is in C++, but there is some interest in re-writing it in Rust as an effort to see"
             " how well Rust could be used for an engine like this, given Rust's inclination towards parallelism.",
-            "<span class=\"center\"><a href=\"https://github.com/debroejm/SwarmEngine\">SwarmEngine</a></span>",
-        )),
-    PageSection(
-        title="SimpleBlend",
-        id="simple-blend",
-        body=TextBlocks("""
-""")),
-    PageSection(
-        title="Reversi",
-        id="reversi",
-        body=TextBlocks("""
-""")),
+        ),
+        links=Links([
+            Link("Github", "https://github.com/debroejm/SwarmEngine"),
+        ])
+    ),
 ]
 
 
@@ -145,6 +150,7 @@ def index():
         active_page='About',
         intro=INTRO,
         sections=SECTIONS,
+        small_sections=SMALL_SECTIONS,
     )
 
 

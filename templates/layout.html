@@ -53,6 +53,7 @@
                     <div class="content-text">
                         <h2 class="section-title">{{ section.title }}</h2>
                         {% for blob in section.body %}<p>{{ blob|safe }}</p>{% endfor %}
+                        <p class="center">{{ section.links.render()|safe }}</p>
                     </div>
                     <div class="content-gallery">
                         {% for img_name in section.gallery %}<img src="{{ url_for('static', filename='images/thumbs/' + img_name) }}" data-full-src="{{ url_for('static', filename='images/' + img_name) }}" alt="{{ img_name }}" />{% endfor %}
