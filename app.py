@@ -56,12 +56,18 @@ class PageSection(object):
 
 INTRO = TextBlocks(
 """
-I'm a software engineer with a passion for games. I have experience in cloud computing at AWS, and a specific interest
- in highly-parallelized processing; especially how it can be applied to game systems. I also dabble in rendering here
- and there.
+I'm a software engineer with a passion for games. I have experience in cloud computing at AWS, where I have designed
+ and developed highly scalable solutions, including improving metric collection efficiency 100x from a p100 of 20+
+ minutes to 10s, as well as a parallelized test framework executing hundreds of thousands of tests that ensure stability
+ in the EC2 organization.
 """,
 """
-Welcome to my repository of projects.
+I have a specific interest in highly-parallelized processing; especially how it can be applied to game systems, both for
+ localized client-side scope in order to take full advantage of modern processors and GPU-side calculations, as well as
+ for scalability in always-online services. I also dabble in rendering here and there.
+""",
+"""
+Please feel free to peruse my repository of projects.
 """,
 )
 
