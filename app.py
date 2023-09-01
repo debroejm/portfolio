@@ -139,6 +139,54 @@ SECTIONS = [
     ),
 ]
 
+SMALL_SECTIONS=[
+    PageSection(
+        title="Simple Blend",
+        id="simple-blend",
+        body=TextBlocks(
+            "A tiny Java library for working with colors that offers translations between RGB/HSB color models, as well"
+            " as utilities that blend colors or can apply color curve translations."
+        ),
+        links=Links([
+            Link("Github", "https://github.com/debroejm/SimpleBlend"),
+        ]),
+    ),
+    PageSection(
+        title="Reversi",
+        id="reversi",
+        body=TextBlocks(
+            "College project that implements a Reversi game client in Java. Supports multiplayer over a hosted server,"
+            " chat / lobby browsing, playing against AIs, and we even threw in an implementation of Go just for fun."
+        ),
+        links=Links([
+            Link("Github", "https://github.com/PLURedTeam/reversi"),
+        ]),
+    ),
+    PageSection(
+        title="Modular Interpreter",
+        id="modular-interpreter",
+        body=TextBlocks(
+            "Virtualized mini-compute environment with registers/memory/etc that can execute arbitrary interpreted"
+            " languages, using supplied language schemas. Originally intended as a way to compile and test ACS scripts"
+            " used in DOOM mods, such as Capture Point Systems."
+        ),
+        links=Links([
+            Link("Github", "https://github.com/debroejm/ModularInterpreter"),
+        ]),
+    ),
+    PageSection(
+        title="Substance",
+        id="substance",
+        body=TextBlocks(
+            "Minecraft mod intended to emulate <a href=\"https://www.klei.com/games/oxygen-not-included\">Oxygen Not"
+            " Included</a>'s layer systems, such as gas and liquid layers. Each layer is calculated in an independent"
+            " thread, and synchronized using a forward facing read-only state while mutations are queued as replayable"
+            " actions that are applied in cycles.",
+            "Still early in development; more info will be added as well as links as it is developed.",
+        ),
+    )
+]
+
 
 @app.route('/')
 def index():

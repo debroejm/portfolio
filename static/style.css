@@ -188,6 +188,12 @@ h2 {
     padding: 0 1em;
 }
 
+.small-sections-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 3em;
+}
+
 #footer {
     padding: 6px;
     font-size: small;
