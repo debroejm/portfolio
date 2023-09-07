@@ -77,6 +77,11 @@ I have a specific interest in highly-parallelized processing; especially how it 
  for scalability in always-online services. I also dabble in rendering here and there.
 """,
 """
+C/C++, Python, and Java are the languages I have most experience in, but I have dabbled in Rust, Lua, Ruby, Perl,
+JavaScript, and others - enough broad experience that I'm fairly comfortable picking up any new language in a relatively
+short amount of time.
+""",
+"""
 Please feel free to peruse my repository of projects.
 """,
 )
@@ -166,9 +171,10 @@ SMALL_SECTIONS=[
         title="Modular Interpreter",
         id="modular-interpreter",
         body=TextBlocks(
-            "Virtualized mini-compute environment with registers/memory/etc that can execute arbitrary interpreted"
-            " languages, using supplied language schemas. Originally intended as a way to compile and test ACS scripts"
-            " used in DOOM mods, such as Capture Point Systems."
+            "Virtualized mini-compute environment written in C++, with registers/memory/etc that can execute arbitrary"
+            " interpreted languages, using supplied language schemas. Originally intended as a way to compile and test"
+            " ACS scripts used in DOOM mods, such as Capture Point Systems, it grew to be an experimental project in"
+            " emulation, with the eventual goal being to emulate early handheld games."
         ),
         links=Links([
             Link("Github", "https://github.com/debroejm/ModularInterpreter"),
